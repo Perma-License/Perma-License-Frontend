@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: 'Acorn';
   src: url('/fonts/Acorn-Bold.otf') format('opentype');
+}
+
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('/fonts/Outfit-SemiBold.otf') format('opentype');
 }

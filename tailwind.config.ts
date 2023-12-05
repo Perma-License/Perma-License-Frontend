@@ -10,11 +10,13 @@ const config: Config = {
     extend: {
       colors: {
         greenNormal: '#00A991',
+        greenLightNormal : '#B0E4DD',
         greenDark:'#007F6D',
         greenDarker:'#003B33',
         BaseBlack: '#000000',
         BaseWhite: '#FFFFFF',
         BaseGrey: '#202020',
+        Blue: '#127CF8'
       },
       fontFamily: {
         outfit: ['Outfit', 'sans-serif'],
