@@ -19,8 +19,8 @@ export default function Header() {
             <div className="relative">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <path d="M11.1769 19.5C15.5952 19.5 19.1769 15.9183 19.1769 11.5C19.1769 7.08172 15.5952 3.5 11.1769 3.5C6.7586 3.5 3.17688 7.08172 3.17688 11.5C3.17688 15.9183 6.7586 19.5 11.1769 19.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M21.1769 21.5L16.8269 17.15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11.1769 19.5C15.5952 19.5 19.1769 15.9183 19.1769 11.5C19.1769 7.08172 15.5952 3.5 11.1769 3.5C6.7586 3.5 3.17688 7.08172 3.17688 11.5C3.17688 15.9183 6.7586 19.5 11.1769 19.5Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M21.1769 21.5L16.8269 17.15" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
 
                 </div>
@@ -31,8 +31,8 @@ export default function Header() {
                 <div className="flex flex-row items-center gap-2 cursor-pointer">
                     <div className=" flex items-center p-2 w-10 h-10 bg-BaseWhite bg-opacity-10 rounded-md">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                            <path d="M20.1769 21.5V19.5C20.1769 18.4391 19.7555 17.4217 19.0053 16.6716C18.2552 15.9214 17.2377 15.5 16.1769 15.5H8.17688C7.11601 15.5 6.0986 15.9214 5.34845 16.6716C4.59831 17.4217 4.17688 18.4391 4.17688 19.5V21.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M12.1769 11.5C14.386 11.5 16.1769 9.70914 16.1769 7.5C16.1769 5.29086 14.386 3.5 12.1769 3.5C9.96774 3.5 8.17688 5.29086 8.17688 7.5C8.17688 9.70914 9.96774 11.5 12.1769 11.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M20.1769 21.5V19.5C20.1769 18.4391 19.7555 17.4217 19.0053 16.6716C18.2552 15.9214 17.2377 15.5 16.1769 15.5H8.17688C7.11601 15.5 6.0986 15.9214 5.34845 16.6716C4.59831 17.4217 4.17688 18.4391 4.17688 19.5V21.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M12.1769 11.5C14.386 11.5 16.1769 9.70914 16.1769 7.5C16.1769 5.29086 14.386 3.5 12.1769 3.5C9.96774 3.5 8.17688 5.29086 8.17688 7.5C8.17688 9.70914 9.96774 11.5 12.1769 11.5Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </div>
                 </div>

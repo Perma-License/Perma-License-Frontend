@@ -87,8 +87,8 @@ export default function Card() {
                 <button className="flex items-center gap-1">
                     <div className="text-Blue font-outfit text-md">Checkout More</div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
-                        <path d="M4.66669 10.5H16.3334" stroke="#127CF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M10.5 4.66669L16.3333 10.5L10.5 16.3334" stroke="#127CF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M4.66669 10.5H16.3334" stroke="#127CF8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M10.5 4.66669L16.3333 10.5L10.5 16.3334" stroke="#127CF8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </button>
             </div>
@@ -100,8 +100,8 @@ export default function Card() {
                     <div className="text-lg font-medium font-outfit text-BaseWhite ">Collection Name</div>
                     <div className="flex items-center p-2 bg-greenNormal rounded-lg gap-2 cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path d="M4.05881 9H13.9412" stroke="black" stroke-width="1.41176" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M9 4.05884L13.9412 9.00001L9 13.9412" stroke="black" stroke-width="1.41176" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4.05881 9H13.9412" stroke="black" strokeWidth="1.41176" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M9 4.05884L13.9412 9.00001L9 13.9412" stroke="black" strokeWidth="1.41176" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </div>
                 </div>

@@ -18,8 +18,8 @@ export default function HeroSection() {
                     <button className="flex items-center p-2 bg-BaseWhite bg-opacity-10 rounded-md gap-2">
                         <div className="text-BaseWhite font-outfit text-md">Explore Atomic Assets</div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 12H19" stroke="#E6F6F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M12 5L19 12L12 19" stroke="#E6F6F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5 12H19" stroke="#E6F6F4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M12 5L19 12L12 19" stroke="#E6F6F4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </button>
                 </div>
