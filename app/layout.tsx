@@ -18,7 +18,6 @@ export default function RootLayout({
       <body className='bg-BaseBlack ' >
         <Header />{children}
         <Footer /></body>
-
     </html>
   )
 }
