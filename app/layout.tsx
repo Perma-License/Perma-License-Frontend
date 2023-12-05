@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Outfit } from 'next/font/google'
 import Header from './Header'
 import Footer from './Footer'
 
