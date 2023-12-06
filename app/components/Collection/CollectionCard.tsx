@@ -1,81 +1,69 @@
+import Link from "next/link"
+
 export default function Card() {
     // Need to create Dynamic Collection Category, collection Name & Collection Image
     const card = [
         {
             name: "Oblivion",
             category: "Collection Category",
-            image: "/assets/image 1.png"
+            image: "/assets/image 1.png",
+            address: "Tmjy5WwHNLeCH8yOPzDA1Lac7lD9m4WVqLYfjGmk9_c",
+            description: "sike"
         },
         {
             name: "Starface",
             category: "Collection Category",
-            image: "/assets/image 2.png"
+            address: "IzHenLgpW3OHnMMrgYRIrjFsjMvnv0ndO-T1mCLkSS4",
+            description: "sike"
         },
         {
             name: "Blue Moon",
             category: "Collection Category",
-            image: "/assets/image 3.png"
+            address: "gi4T7GIWe4R8LAB7HiXFVQ_7A-sEyFYbCG9FsDeIZ8E",
+            description: "sike"
         },
         {
             name: "Gray Blood",
             category: "Collection Category",
-            image: "/assets/image 4.png"
+            address: "gi4T7GIWe4R8LAB7HiXFVQ_7A-sEyFYbCG9FsDeIZ8E",
+            description: "sike"
         },
         {
             name: "Unread Books",
             category: "Collection Category",
-            image: "/assets/image 5.png"
+            address: "rMMrx53QS5T4A8nbJIax9kdezz4WsmLTbs5J9uHAgV4",
+            description: "sike"
         },
         {
             name: "Mango slime",
             category: "Collection Category",
-            image: "/assets/image 6.png"
+            address: "z7bDM87TX6Ei_FiYQ37F3fnp4MgwsNU4agPIEEHvLlA",
+            description: "sike"
         },
         {
             name: "Purple Oil",
             category: "Collection Category",
-            image: "/assets/image 7.png"
+            address: "Ol5Jzq70DDRqxYiNqhS7c5fbmBG4PPJbbAU8zGQfzN8",
+            description: "sike"
         },
         {
             name: "Chicken Stew",
             category: "Collection Category",
-            image: "/assets/image 8.png"
+            address: "W_EmFMpRl4knj1csglGrgVi4rx8RG7oucksrFdEOzho",
+            description: "sike"
         },
         {
             name: "Yellow girl",
             category: "Collection Category",
-            image: "/assets/image 9.png"
+            address: "NQbRq9f3KoQY-Uosvpf9H8TbVEDOqLeY_qjl_WqL_-s",
+            description: "sike"
         },
         {
             name: "LandLords",
             category: "Collection Category",
-            image: "/assets/image 10.png"
-        },
-        {
-            name: "Collection Name",
-            category: "Collection Category",
-            image: "/assets/image 11.png"
-        },
-        {
-            name: "Collection Name",
-            category: "Collection Category",
-            image: "/assets/image 12.png"
-        },
-        {
-            name: "Collection Name",
-            category: "Collection Category",
-            image: "/assets/image 13.png"
-        },
-        {
-            name: "Collection Name",
-            category: "Collection Category",
-            image: "/assets/image 14.png"
-        },
-        {
-            name: "Collection Name",
-            category: "Collection Category",
-            image: "/assets/image 15.png"
-        },
+            address: "XAIt5IurErMFOw80k4yzn-NXp5RhusaB7mMyUOog0c0",
+            description: "sike"
+        }
     ]
     return (
         <div className="flex flex-col mt-2 gap-4    ">
@@ -95,9 +83,9 @@ export default function Card() {
             <div className="mt-10 flex flex-row flex-wrap gap-x-[6rem] gap-y-[3rem] justify-between">
                 {
                     card.slice(0,10).map((e) => (
-                        <div className="flex flex-col w-fit bg-BaseGrey rounded-lg">
+                        <Link href={`/${e.address}`} className="flex flex-col w-fit bg-BaseGrey rounded-lg">
                             {/* Image-container */}
-                            <img src={e.image} className="w-72 max-h-[12rem] rounded-lg" alt="image-1" />
+                            <img src={"https://arweave.net/" + e.address} className="w-72 max-h-[12rem] rounded-lg" alt="image-1" />
                             {/* Image Description */}
                             <div className="flex items-center h-[3rem] mx-4 my-2 justify-between">
                                 <div className="text-lg font-medium font-outfit text-BaseWhite ">{e.name}</div>
@@ -108,7 +96,7 @@ export default function Card() {
                                     </svg>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))
                 }
             </div>
