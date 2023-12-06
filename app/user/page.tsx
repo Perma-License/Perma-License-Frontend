@@ -24,7 +24,7 @@ export default function User() {
         {
             name: "Oblivion",
             category: "Collection Category",
-            image: "/assets/image 1.png"
+            image: "/assets/quarterpounder.jpg"
         },
     ]
     return (

@@ -37,7 +37,7 @@ export default function Header() {
     },[ArConnect])
 
     return (
-        <header className="flex flex-row mx-32 justify-between items-center mt-7 z-10 sticky bg-BaseBlack">
+        <header className="flex flex-row mx-32 justify-between items-center mt-7 sticky bg-BaseBlack">
             {/* Logo */}
             <div className="flex flex-row items-center gap-5">
                 <div className="flex flex-row items-center gap-2 cursor-pointer" onClick={home} >

@@ -10,8 +10,8 @@ export default function Home({ params }) {
   const [currency, setCurrency] = useState([])
   const [licenseTerm, setLicenseTerm] = useState([])
   const [commercialUse, setCommercialUse] = useState([])
-  
-  console.log("here: ", paymentAddress, currency, licenseTerm, commercialUse)
+  const [showModal, setShowModal] = useState(false)
+  const [slidePosition, setSlidePosition] = useState(0)
 
   const dosth = async () => {
     const webWallet = new ArweaveWebWallet();
@@ -33,25 +33,25 @@ export default function Home({ params }) {
   }
 
  const card = [
-      {
-          name: "Oblivion",
-          category: "Collection Category",
-          image: "/assets/image 1.png",
-          address: "Tmjy5WwHNLeCH8yOPzDA1Lac7lD9m4WVqLYfjGmk9_c",
-          description: "sike"
-      },
-      {
-          name: "Starface",
-          category: "Collection Category",
-          address: "IzHenLgpW3OHnMMrgYRIrjFsjMvnv0ndO-T1mCLkSS4",
-          description: "sike"
-      },
-      {
-          name: "Blue Moon",
-          category: "Collection Category",
-          address: "gi4T7GIWe4R8LAB7HiXFVQ_7A-sEyFYbCG9FsDeIZ8E",
-          description: "sike"
-      },
+  {
+    name: "Glorious Purpose",
+    category: "Collection Category",
+    image: "/assets/image 1.png",
+    address: "u_7Y1KFXREBHMKWWiSHuHG3kPjSVLe6_GVp7tLVSW-Q",
+    description: "The Throne"
+},
+{
+    name: "Sweet dreams are made of cheese",
+    category: "Collection Category",
+    address: "lSqcmTuhc0cvAxuCEMxcCov_YXYA7Ai7dc_OVX_AYco",
+    description: "cheeeeese yum yum"
+},
+{
+    name: "Royale with Cheese",
+    category: "Collection Category",
+    address: "7vc1A9k-KOSC4OrL62YAUW4zDLiYyLe0ZZY8xKDPmFA",
+    description: "'you know what they call a quarter pounder with cheese?'"
+},
       {
           name: "Gray Blood",
           category: "Collection Category",
@@ -206,9 +206,9 @@ export default function Home({ params }) {
             </div>
             {/* Col-2 */}
             <div className='flex flex-col gap-2 text-lg text-BaseWhite'>
-              <h1>{paymentAddress ? paymentAddress : "0x8cdbd...0d3c" }</h1>
+              <h1>{paymentAddress ? paymentAddress : "ntPm7c1TMDSIAAC.....lCkL5FDBkCWmFh3b1A" }</h1>
               <h1>{currency ? currency : "Arweave"}</h1>
-              <h1>{String(licenseTerm).startsWith("One-Time")? "One Time" : "Monthly"}</h1>
+              <h1>{String(licenseTerm).startsWith("One-Time")? "One Time" : "One Time"}</h1>
               <h1>{commercialUse ? commercialUse : "Allowed-with-credit"}</h1>
             </div>
           </div>
@@ -228,9 +228,52 @@ export default function Home({ params }) {
           <div className=' bg-BaseWhite bg-opacity-50 h-0.5 w-full'></div>
           {/* button */}
           <div className='flex flex-col px-8 items-start py-3 gap-2'>
-            <button className="flex items-center py-2 px-6 bg-greenNormal rounded-lg text-lg text-BaseWhite">
+            <button onClick={() => {setShowModal(true)}} className="flex items-center py-2 px-6 bg-greenNormal rounded-lg text-lg text-BaseWhite">
               Buy Rights
             </button>
+          </div>
+        </div>
+      </div>
+
+      <div className={showModal ? `inset-0 bg-[#00000075] fixed`: 'hidden'} >
+        <div className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-[#161515] w-[30rem] h-[25rem] rounded-lg'>
+          <div onClick={() => {setShowModal(false)}}>
+            <svg  className='absolute cursor-pointer right-[1rem] top-[1rem] w-8' fill="none" stroke="white" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <div onClick={() => {setSlidePosition(slidePosition - 1 )}} className='bg-gray-400 rounded-full absolute left-[13px] top-[45%] cursor-pointer'>
+            <svg className='w-8' fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+          </div>
+          <div onClick={() => {setSlidePosition(slidePosition + 1 )}} className='bg-gray-400 rounded-full absolute right-[13px] top-[45%] cursor-pointer'>
+            <svg className='w-8' fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </div>
+          <div className={ `${slidePosition === 0 ? '' : slidePosition === 1 ? '-translate-x-[30rem]' : '-translate-x-[60rem]'} text-white h-full flex flex-row items-center`}>
+            <div className='w-[30rem] h-[70%] flex-grow-0 flex-shrink-0 p-10 text-center flex flex-col justify-between'>
+              <div className='flex flex-col gap-8'>
+              <div className='font-bold text-4xl'>Payment</div>
+              <p className=''>Pay the creator</p>
+              </div>
+              <button className="flex items-center py-2 px-6 bg-greenNormal rounded-lg text-lg text-BaseWhite w-20 m-auto">Pay</button>
+            </div>
+            <div className='w-[30rem] h-[70%] flex-grow-0 flex-shrink-0 p-10 text-center flex flex-col justify-between'>
+              <div className='flex flex-col gap-8'>
+              <div className='font-bold text-4xl'>Mint License</div>
+              <p className=''>Mint your license details as an NFT</p>
+              </div>
+              <button className="flex items-center py-2 px-6 bg-greenNormal rounded-lg text-lg text-BaseWhite w-20 m-auto">Mint</button>
+            </div>
+            <div className='w-[30rem] h-[70%] flex-grow-0 flex-shrink-0 p-10 text-center flex flex-col justify-between'>
+              <div className='flex flex-col gap-8'>
+                <div className='font-bold text-4xl'>Download Asset</div>
+                <p className=''>Download Asset to your device</p>
+                </div>
+              <button className="flex items-center py-2 px-6 bg-greenNormal rounded-lg text-lg text-BaseWhite w-25 m-auto">Download</button>
+            </div>
           </div>
         </div>
       </div>

@@ -4,23 +4,23 @@ export default function Card() {
     // Need to create Dynamic Collection Category, collection Name & Collection Image
     const card = [
         {
-            name: "Oblivion",
+            name: "Glorious Purpose",
             category: "Collection Category",
             image: "/assets/image 1.png",
-            address: "Tmjy5WwHNLeCH8yOPzDA1Lac7lD9m4WVqLYfjGmk9_c",
-            description: "sike"
+            address: "u_7Y1KFXREBHMKWWiSHuHG3kPjSVLe6_GVp7tLVSW-Q",
+            description: "The Throne"
         },
         {
-            name: "Starface",
+            name: "Sweet dreams are made of",
             category: "Collection Category",
-            address: "IzHenLgpW3OHnMMrgYRIrjFsjMvnv0ndO-T1mCLkSS4",
-            description: "sike"
+            address: "lSqcmTuhc0cvAxuCEMxcCov_YXYA7Ai7dc_OVX_AYco",
+            description: "cheeeeese yum yum"
         },
         {
-            name: "Blue Moon",
+            name: "Royale with Cheese",
             category: "Collection Category",
-            address: "gi4T7GIWe4R8LAB7HiXFVQ_7A-sEyFYbCG9FsDeIZ8E",
-            description: "sike"
+            address: "7vc1A9k-KOSC4OrL62YAUW4zDLiYyLe0ZZY8xKDPmFA",
+            description: "'you know what they call a quarter pounder with cheese?'"
         },
         {
             name: "Gray Blood",
