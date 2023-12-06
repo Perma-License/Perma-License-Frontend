@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-BaseBlack ' >
+      <body className='bg-BaseBlack ' suppressHydrationWarning={true}>
         <Header />{children}
         <Footer /></body>
     </html>
