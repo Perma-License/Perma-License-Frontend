@@ -1,9 +1,22 @@
 'use client'
 import { ArConnect } from 'arweavekit/auth'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
+    const router = useRouter();
 
+    const redirect = () =>{
+   
+        router.push('/user');
+     
+    }
+
+    const home = () =>{
+   
+        router.push('/');
+     
+    }
     const [address, setaddress] = useState('')
 
     const connectWallet = async () => {
@@ -27,7 +40,7 @@ export default function Header() {
         <header className="flex flex-row mx-32 justify-between items-center mt-7 z-10 sticky bg-BaseBlack">
             {/* Logo */}
             <div className="flex flex-row items-center gap-5">
-                <div className="flex flex-row items-center gap-2">
+                <div className="flex flex-row items-center gap-2 cursor-pointer" onClick={home} >
                     <img src="/logo.svg" alt="logo" className="w-9 h-fit" />
                     <div className="text-2xl font-medium font-acorn text-BaseWhite">Perma License</div>
                 </div>
@@ -53,11 +66,11 @@ export default function Header() {
             {/* User Buttons */}
             <div className="flex flex-row items-center gap-2">
                 <div className="flex flex-row items-center gap-2 cursor-pointer">
-                    <div className=" flex items-center p-2 w-10 h-10 bg-BaseWhite bg-opacity-10 rounded-md">
+                    <div className=" flex items-center p-2 w-10 h-10 bg-BaseWhite bg-opacity-10 rounded-md" onClick={redirect}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                             <path d="M20.1769 21.5V19.5C20.1769 18.4391 19.7555 17.4217 19.0053 16.6716C18.2552 15.9214 17.2377 15.5 16.1769 15.5H8.17688C7.11601 15.5 6.0986 15.9214 5.34845 16.6716C4.59831 17.4217 4.17688 18.4391 4.17688 19.5V21.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M12.1769 11.5C14.386 11.5 16.1769 9.70914 16.1769 7.5C16.1769 5.29086 14.386 3.5 12.1769 3.5C9.96774 3.5 8.17688 5.29086 8.17688 7.5C8.17688 9.70914 9.96774 11.5 12.1769 11.5Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
+                        </svg>  
                     </div>
                 </div>
                 <button className="flex items-center p-2 bg-BaseWhite bg-opacity-10 rounded-md gap-2">
