@@ -242,12 +242,12 @@ export default function Home({ params }) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </div>
-          <div onClick={() => {setSlidePosition(slidePosition - 1 )}} className='bg-gray-400 rounded-full absolute left-[13px] top-[45%] cursor-pointer'>
+          <div onClick={() => {setSlidePosition(slidePosition - 1 )}} className='bg-gray-400 z-10 rounded-full absolute left-[13px] top-[45%] cursor-pointer'>
             <svg className='w-8' fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
           </div>
-          <div onClick={() => {setSlidePosition(slidePosition + 1 )}} className='bg-gray-400 rounded-full absolute right-[13px] top-[45%] cursor-pointer'>
+          <div onClick={() => {setSlidePosition(slidePosition + 1 )}} className='bg-gray-400 z-10 rounded-full absolute right-[13px] top-[45%] cursor-pointer'>
             <svg className='w-8' fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
@@ -272,7 +272,14 @@ export default function Home({ params }) {
                 <div className='font-bold text-4xl'>Download Asset</div>
                 <p className=''>Download Asset to your device</p>
                 </div>
-              <button className="flex items-center py-2 px-6 bg-greenNormal rounded-lg text-lg text-BaseWhite w-25 m-auto">Download</button>
+              <button     onClick={() => {
+                let a = document.createElement("a");
+                document.body.appendChild(a);
+                a.href = "/assets/quarterpounder.jpg";
+                a.download = "quarterpounder.jpg";
+                a.click();
+                a.remove();
+              }} className="flex items-center py-2 px-6 bg-greenNormal rounded-lg text-lg text-BaseWhite w-25 m-auto">Download</button>
             </div>
           </div>
         </div>

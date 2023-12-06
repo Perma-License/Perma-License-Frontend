@@ -22,7 +22,7 @@ export default function User() {
     ]
     const card = [
         {
-            name: "Oblivion",
+            name: "Royale with Cheese",
             category: "Collection Category",
             image: "/assets/quarterpounder.jpg"
         },
@@ -40,12 +40,12 @@ export default function User() {
                 {/* User Info + Interactivity Buttons */}
                 <div className="flex justify-between">
                     <div className="flex flex-col gap-1 ">
-                        <div className="text-lg text-white font-outfit">Username</div>
+                        <div className="text-lg text-white font-outfit">lordmike</div>
                         <div className="flex gap-4 items-center">
                             {/* User Address */}
                             <div className="text-sm text-BaseWhite font-outfit text-opacity-50">0x09750ad...360fdb7</div>
                             {/* User Joined Date */}
-                            <div className="text-xs text-BaseWhite font-outfit">Joined June 2023</div>
+                            <div className="text-xs text-BaseWhite font-outfit">Joined Dec 2023</div>
                         </div>
                     </div>
                     {/* Buttons */}
