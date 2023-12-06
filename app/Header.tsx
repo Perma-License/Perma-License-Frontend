@@ -1,4 +1,28 @@
+'use client'
+import { ArConnect } from 'arweavekit/auth'
+import { useState, useEffect } from 'react'
+
 export default function Header() {
+
+    const [address, setaddress] = useState('')
+
+    const connectWallet = async () => {
+        console.log("wrokin")
+
+        const response = await ArConnect.connect({
+            permissions: ['ACCESS_ADDRESS', 'ACCESS_PUBLIC_KEY']
+        });
+
+        console.log("res: ", response)
+    }
+
+    useEffect(() => {
+        (async() => {
+            const address = await ArConnect.getActiveAddress();
+            setaddress(address)
+        })()
+    },[ArConnect])
+
     return (
         <header className="flex flex-row mx-32 justify-between items-center mt-7 z-10 sticky bg-BaseBlack">
             {/* Logo */}
@@ -40,7 +64,7 @@ export default function Header() {
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                         <path d="M4.24831 3.5C2.83 3.5 1.67688 4.65313 1.67688 6.07143V18.9286C1.67688 20.3469 2.83 21.5 4.24831 21.5H19.6769C21.0952 21.5 22.2483 20.3469 22.2483 18.9286V9.92857C22.2483 8.51027 21.0952 7.35714 19.6769 7.35714H4.89117C4.53759 7.35714 4.24831 7.06786 4.24831 6.71429C4.24831 6.36071 4.53759 6.07143 4.89117 6.07143H19.6769C20.388 6.07143 20.9626 5.49688 20.9626 4.78571C20.9626 4.07455 20.388 3.5 19.6769 3.5H4.24831ZM18.3912 13.1429C18.7322 13.1429 19.0592 13.2783 19.3003 13.5194C19.5414 13.7606 19.6769 14.0876 19.6769 14.4286C19.6769 14.7696 19.5414 15.0966 19.3003 15.3377C19.0592 15.5788 18.7322 15.7143 18.3912 15.7143C18.0502 15.7143 17.7231 15.5788 17.482 15.3377C17.2409 15.0966 17.1055 14.7696 17.1055 14.4286C17.1055 14.0876 17.2409 13.7606 17.482 13.5194C17.7231 13.2783 18.0502 13.1429 18.3912 13.1429Z" fill="white" />
                     </svg>
-                    <div className="text-BaseWhite font-outfit text-md">Connect Wallet</div>
+                    <div className="text-BaseWhite font-outfit text-md" onClick={() => {connectWallet()}}>{address? address.substring(0,5)+"..."+address.substring(address.length - 5): 'Connect'}</div>
                 </button>
             </div>
         </header>

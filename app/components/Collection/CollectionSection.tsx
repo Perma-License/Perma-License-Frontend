@@ -6,22 +6,19 @@ export default function Home() {
             name: "All",
         },
         {
-            name: "Art",
+            name: "Jpegs",
         },
         {
-            name: "Gaming",
-        },
-        {
-            name: "Membership",
-        },
-        {
-            name: "PFP",
-        },
-        {
-            name: "Photography",
+            name: "Videos",
         },
         {
             name: "Music",
+        },
+        {
+            name: "Games",
+        },
+        {
+            name: "Books",
         },
     ]
     return (

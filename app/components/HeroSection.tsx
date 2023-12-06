@@ -1,4 +1,27 @@
+'use client'
+import { ArConnect } from 'arweavekit/auth'
+import { useEffect, useState } from 'react';
+
 export default function HeroSection() {
+    const [address, setaddress] = useState('')
+
+    const connectWallet = async () => {
+        console.log("wrokin")
+
+        const response = await ArConnect.connect({
+            permissions: ['ACCESS_ADDRESS', 'ACCESS_PUBLIC_KEY']
+        });
+
+        console.log("res: ", response)
+    }
+
+    useEffect(() => {
+        (async() => {
+            const address = await ArConnect.getActiveAddress();
+            setaddress(address)
+        })()
+    },[ArConnect])
+
     return (
         <div className="flex flex-row justify-between items-center">
             {/* Left Side */}
@@ -7,13 +30,13 @@ export default function HeroSection() {
                     {/* Title */}
                     <div className="text-xl font-outfit text-greenLightNormal">Welcome to Perma License 👋</div>
                     {/* Heading */}
-                    <div className="text-5xl font-acorn font-semibold text-greenNormal ">Neque porro quisquam est qui dolorem ipsum </div>
+                    <div className="text-5xl font-acorn font-semibold text-greenNormal ">One stop shop for everything UDL! </div>
                     {/* Description */}
-                    <div className="text-xl font-normal font-outfit text-BaseWhite">Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla ex sem, scelerisque eu quam id.</div>
+                    <div className="text-xl font-normal font-outfit text-BaseWhite">buy license for assets, verify your asset rights, support creators</div>
                 </div>
-                <div className="flex gap-2">
-                    <button className="flex items-center p-2 bg-greenNormal rounded-md gap-2">
-                        <div className="text-BaseBlack font-outfit text-md">Connect Wallet</div>
+                <div className="flex gap-4 mt-6">
+                    <button className="flex items-center p-2 bg-greenNormal rounded-md gap-2" onClick={() => {connectWallet()}}>
+                        <div className="text-BaseBlack font-outfit text-md px-3">{address? address.substring(0,5)+"..."+address.substring(address.length - 5): 'Connect'}</div>
                     </button>
                     <button className="flex items-center p-2 bg-BaseWhite bg-opacity-10 rounded-md gap-2">
                         <div className="text-BaseWhite font-outfit text-md">Explore Atomic Assets</div>

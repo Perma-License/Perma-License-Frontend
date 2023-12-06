@@ -2,52 +2,52 @@ export default function Card() {
     // Need to create Dynamic Collection Category, collection Name & Collection Image
     const card = [
         {
-            name: "Collection Name",
+            name: "Oblivion",
             category: "Collection Category",
             image: "/assets/image 1.png"
         },
         {
-            name: "Collection Name",
+            name: "Starface",
             category: "Collection Category",
             image: "/assets/image 2.png"
         },
         {
-            name: "Collection Name",
+            name: "Blue Moon",
             category: "Collection Category",
             image: "/assets/image 3.png"
         },
         {
-            name: "Collection Name",
+            name: "Gray Blood",
             category: "Collection Category",
             image: "/assets/image 4.png"
         },
         {
-            name: "Collection Name",
+            name: "Unread Books",
             category: "Collection Category",
             image: "/assets/image 5.png"
         },
         {
-            name: "Collection Name",
+            name: "Mango slime",
             category: "Collection Category",
             image: "/assets/image 6.png"
         },
         {
-            name: "Collection Name",
+            name: "Purple Oil",
             category: "Collection Category",
             image: "/assets/image 7.png"
         },
         {
-            name: "Collection Name",
+            name: "Chicken Stew",
             category: "Collection Category",
             image: "/assets/image 8.png"
         },
         {
-            name: "Collection Name",
+            name: "Yellow girl",
             category: "Collection Category",
             image: "/assets/image 9.png"
         },
         {
-            name: "Collection Name",
+            name: "LandLords",
             category: "Collection Category",
             image: "/assets/image 10.png"
         },
@@ -92,20 +92,27 @@ export default function Card() {
                     </svg>
                 </button>
             </div>
-            <div className="flex flex-col h-60 w-fit bg-BaseGrey rounded-lg">
-                {/* Image-container */}
-                <img src="/assets/image 1.png" className="w-72 rounded-lg" alt="image-1" />
-                {/* Image Description */}
-                <div className="flex items-center mx-4 my-2 justify-between">
-                    <div className="text-lg font-medium font-outfit text-BaseWhite ">Collection Name</div>
-                    <div className="flex items-center p-2 bg-greenNormal rounded-lg gap-2 cursor-pointer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                            <path d="M4.05881 9H13.9412" stroke="black" strokeWidth="1.41176" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M9 4.05884L13.9412 9.00001L9 13.9412" stroke="black" strokeWidth="1.41176" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </div>
-                </div>
+            <div className="mt-10 flex flex-row flex-wrap gap-x-[6rem] gap-y-[3rem] justify-between">
+                {
+                    card.slice(0,10).map((e) => (
+                        <div className="flex flex-col w-fit bg-BaseGrey rounded-lg">
+                            {/* Image-container */}
+                            <img src={e.image} className="w-72 max-h-[12rem] rounded-lg" alt="image-1" />
+                            {/* Image Description */}
+                            <div className="flex items-center h-[3rem] mx-4 my-2 justify-between">
+                                <div className="text-lg font-medium font-outfit text-BaseWhite ">{e.name}</div>
+                                <div className="flex items-center p-2 bg-greenNormal rounded-lg gap-2 cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                        <path d="M4.05881 9H13.9412" stroke="black" strokeWidth="1.41176" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M9 4.05884L13.9412 9.00001L9 13.9412" stroke="black" strokeWidth="1.41176" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
+            
         </div>
     )
 }
